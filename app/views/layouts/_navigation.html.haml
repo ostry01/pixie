@@ -1,0 +1,22 @@
+- if user_signed_in?
+  %li
+    %form{action: new_photo_path }
+      %button.btn.btn-warning.navbar-btn="Dodaj zdjęcie"
+  %li
+    = link_to 'Moje zdjęcia', user_path(current_user)
+  %li
+    = link_to 'Edytuj konto', edit_user_registration_path
+  %li.logout-button
+    = link_to 'Wyloguj', destroy_user_session_path, method: 'delete', class: 'pull-right'
+- unless admin_signed_in? or user_signed_in?
+  %li.login-button
+    = link_to 'Zaloguj', new_user_session_path
+- if admin_signed_in?
+  %li
+    = link_to waiting_photos_path do
+      Waiting Photos 
+  %li
+    = link_to 'Użykownicy', users_path 
+  %li.logout-button
+    = link_to 'Wyloguj', destroy_admin_session_path, method: 'delete', class: 'pull-right'
+

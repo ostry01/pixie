@@ -1,0 +1,31 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+.item {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  margin: 5px;
+}
+.center-block 
+{
+  text-align: center;
+}
+.form {
+
+  max-width: 300px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form .bootstrap-filestyle {
+  margin-top: 20px;
+}
+.form .btn-success {
+  margin-top: 20px;
+  margin-right: 20px;
+  float:right;
+}
+.paginate {
+  text-align: center;
+}

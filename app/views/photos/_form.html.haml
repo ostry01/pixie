@@ -1,0 +1,12 @@
+= form_for photo, html: { multipart: true, class: 'form' } do |f|
+  - if photo.errors.any?
+    .alert.alert-danger.alert-block
+      %a.close{"data-dismiss" => "alert"} x
+      = content_tag :div
+      %h2= "#{pluralize(photo.errors.count, "error")} prohibited this post from being saved:"
+      %ul
+        - photo.errors.full_messages.each do |msg|
+          %li= msg
+  %h2.form-post-heading= "Dodaj zdjęcie."
+  = f.file_field :image, class: 'filestyle', "data-buttonName" => "btn-primary", 'data-input' => false, 'data-buttonText' => "Wybierz plik."
+  = f.submit 'Zapisz', class: 'btn btn-lg btn-success'

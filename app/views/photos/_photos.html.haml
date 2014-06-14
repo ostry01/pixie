@@ -1,0 +1,6 @@
+.center-block
+  - photos.each do |photo|
+    .item
+      = link_to( image_tag( photo.image.url(:default) ), photo )
+.paginate
+  = will_paginate photos,:page_links => false , renderer: BootstrapPagination::Rails
